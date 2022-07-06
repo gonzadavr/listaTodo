@@ -1,13 +1,21 @@
 import './style.css';
 
-import{saludar}from'./js/componentes.js';
 
-import {Todo, TodoList} from './classes'
+import {Todo, TodoList} from './classes';
+import { crearTodoHTML } from './js/componentes';
 
 
-const todoList = new TodoList();
+export const todoList = new TodoList();
+
 
 
 const tarea = new Todo('Aprender JS');
 
-console.log(tarea);
+
+todoList.nuevoTodo(tarea);
+
+
+tarea.completado=false;
+console.log(todoList);
+
+crearTodoHTML(tarea);
